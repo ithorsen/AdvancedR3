@@ -13,5 +13,8 @@ Imports:
     stringr,
     tidyr
 Suggests: 
+    gitcreds,
     styler,
     usethis
+URL: https://github.com/ithorsen/AdvancedR3
+BugReports: https://github.com/ithorsen/AdvancedR3/issues
