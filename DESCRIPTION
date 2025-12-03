@@ -6,6 +6,7 @@ Encoding: UTF-8
 Imports: 
     dplyr,
     fs,
+    glue,
     here,
     quarto,
     readr,
@@ -21,3 +22,5 @@ Suggests:
     usethis
 URL: https://github.com/ithorsen/AdvancedR3
 BugReports: https://github.com/ithorsen/AdvancedR3/issues
+Depends: 
+    tidyverse
