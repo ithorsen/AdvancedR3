@@ -53,12 +53,3 @@ lipidomics |>
 ```{r}
 clean(lipidomics)
 ```
-
-```{r}
-lipidomics |>
-  
-```
-
-```{r}
-
-```
