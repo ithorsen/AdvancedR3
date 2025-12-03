@@ -60,10 +60,42 @@ clean <- function(data) {
 #' @param data The lipidomics data
 #'
 #' @returns A data.frame
-preprocess <- function(data){
+preprocess <- function(data) {
   data |>
     dplyr::mutate(
       class = as.factor(class),
       value = scale(value)
     )
+}
+
+#' Fitting model
+#'
+#' @param data the lipidomics data
+#' @param model the formula
+#'
+#' @returns a data.frame
+fit_model <- function(data, model) {
+  stats::glm(
+    formula = model,
+    data = data,
+    family = binomial
+  ) |>
+    broom::tidy(exponentiate = TRUE) |>
+    dplyr::mutate(
+      metabolite = base::unique(data$metabolite),
+      model = base::format(model),
+      .before = tidyselect::everything()
+    )
+}
+
+#' Create model results
+#'
+#' @param data the lipidomics data
+#'
+#' @returns A data frame of model results
+create_model_results <- function(data) {
+  data |>
+    dplyr::filter(metabolite == "Cholesterol") |>
+    preprocess() |>
+    fit_model(class ~ value)
 }
