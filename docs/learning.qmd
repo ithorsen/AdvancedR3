@@ -23,8 +23,8 @@ tar_read(table_descriptive_stats) |>
   )
 ```
 
-## Plot of distributions
+## Results: Distribution plot
 
 ```{r}
-
+tar_read(plot_distribution)
 ```
