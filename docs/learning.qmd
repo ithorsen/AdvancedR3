@@ -2,6 +2,8 @@
 title: "Draft Quarto document"
 author: "Your Name"
 format: html
+editor_options: 
+  chunk_output_type: console
 ---
 
 ## Header 1
@@ -50,6 +52,27 @@ lipidomics |>
   ungroup()
 ```
 
+## Running multiple models
+
 ```{r}
-clean(lipidomics)
+just_cholesterol <- lipidomics |>
+  filter(metabolite == "Cholesterol") |>
+  preprocess()
+
+
+
+lipidomics |>
+  filter(metabolite == "Cholesterol") |>
+  preprocess() |>
+  fit_all_models()
+```
+
+## Exercise 21.5
+
+```{r}
+lipidomics |>
+  group_split(metabolite) |>
+  map(preprocess) |>
+  map(fit_all_models) |>
+  list_rbind()
 ```
