@@ -95,16 +95,17 @@ fit_model <- function(data, model) {
 #' @returns A data frame of model results
 create_model_results <- function(data) {
   data |>
-    dplyr::filter(metabolite == "Cholesterol") |>
-    preprocess() |>
-    fit_model(class ~ value)
+    dplyr::group_split(metabolite) |>
+    purrr::map(preprocess) |>
+    purrr::map(fit_all_models) |>
+    purrr::list_rbind()
 }
 
-#' Fitting all models
+#' Fit all models to a given data frame
 #'
-#' @param data the lipidomics data
+#' @param The data frame to fit all the models to
 #'
-#' @returns A data frame of model results
+#' @returns A data frame with results from all models
 fit_all_models <- function(data) {
   list(
     class ~ value,

@@ -3,11 +3,12 @@ file|stem|c44b806f3841f535|09442fac263aded2|2c530c1562a7fbd1|1735323524|data/lip
 lipidomics|stem|f592020520394905|e7a0b51b4c5fd316|8766f2d0e3176a68|-1498393010||t20425.5817465167s|s4134b|4134|rds|local|vector|||0.47||
 plot_distribution|stem|ee46f41e1c2f7b3c|01ce942be37808d6|9f4c2ae1d0010e8e|1923175936||t20425.5817568439s|s270491b|270491|rds|local|vector|||0.75||
 table_descriptive_stats|stem|8db6fd5cc270c25d|34e33bc9eaef7fce|7eda0607a524caef|1291134815||t20425.5817575674s|s416b|416|rds|local|vector|||0.01||
-model_results|stem|52008ecd0f398f03|8dc321a94f7f9089|664f23b986044f08|-1523611067||t20425.7809375519s|s312b|312|rds|local|vector|||0.12||
 fit_model|function|1c8e7e20586e1d3a
 preprocess|function|27efdd529f320467
 clean|function|ce06151f5b2133d2
 create_table_descriptive_stats|function|94840091f24883f7
 create_plot_distributions|function|b411ca55e4bdd968
-create_model_results|function|7540142ecf1a318a
-quarto_doc|stem|b40dee06f127f60d|80475f42277d43fb|3d54edf7d2566a25|1582462002|docs/learning.html*docs/learning.qmd|t20426.3349233128s|s31809b|31809|file|local|vector|||7.55|pakke 'quarto' blev bygget under R version 4.5.2|
+fit_all_models|function|01715bb0478aa4a5
+create_model_results|function|e54ea1c5741c3b3e
+model_results|stem|96c87645c640e4a1|8dc321a94f7f9089|22090d58c90a0350|-1523611067||t20426.4258062701s|s2768b|2768|rds|local|vector|||0.53|glm.fit: fitted probabilities numerically 0 or 1 occurred. glm.fit: algorithm did not converge. glm.fit: fitted probabilities numerically 0 or 1 occurred. glm.fit: algorithm did not converge. glm.fit: fitted probabilities numerically 0 or 1 occurred. glm.fit: fitted probabilities numerically 0 or 1 occurred|
+quarto_doc|stem|0269f6d85e76060c|cc2939e224433af8|bc3af5138c55640a|1582462002|docs/learning.html*docs/learning.qmd|t20426.4258994446s|s35411b|35411|file|local|vector|||7.74|pakke 'quarto' blev bygget under R version 4.5.2|

@@ -55,24 +55,15 @@ lipidomics |>
 ## Running multiple models
 
 ```{r}
-just_cholesterol <- lipidomics |>
-  filter(metabolite == "Cholesterol") |>
-  preprocess()
-
-
-
-lipidomics |>
-  filter(metabolite == "Cholesterol") |>
-  preprocess() |>
-  fit_all_models()
-```
-
-## Exercise 21.5
-
-```{r}
 lipidomics |>
   group_split(metabolite) |>
   map(preprocess) |>
   map(fit_all_models) |>
   list_rbind()
+```
+
+## Appendix
+
+```{r}
+tar_read(model_results)
 ```
